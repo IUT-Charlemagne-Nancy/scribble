@@ -55,6 +55,9 @@ public class PanneauChoix extends JPanel {
 		bg.add(b2);
 		bg.add(b3);
 		this.add(c);
+		this.add(b1);
+		this.add(b2);
+		this.add(b3);
 		}
 	
 	public void determineCouleur(int n) {
