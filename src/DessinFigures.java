@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -8,12 +10,14 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 
-public class DessinFigures extends JPanel {
+public class DessinFigures extends JPanel  {
 	private Color couleur;
 	private int lastX;
 	private int lastY;
+	
 
 public DessinFigures() {
+
 		final MouseMotionListener mml=new MouseMotionListener(){
 			
 			public void mouseMoved(MouseEvent e) {
@@ -56,7 +60,7 @@ public DessinFigures() {
 			
 		};
 		this.addMouseListener(ml);
-	}
+}
 
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
@@ -77,6 +81,7 @@ public DessinFigures() {
 		return couleur;
 	}
 
+	
 	
 	
 	
