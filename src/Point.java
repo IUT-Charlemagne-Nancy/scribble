@@ -45,12 +45,12 @@ public class Point {
 		this.x = nb;
 	}
 	
-	public void ModifierY(int nb){
+	public void modifierY(int nb){
 		this.y = nb;
 	}
 	
 	public void translation(int x1, int y1){
-		this.modifierX(x1);
-		this.ModifierY(y1);
+		this.incrementerX(x1);
+		this.incrementerY(y1);
 	}
 }
