@@ -11,6 +11,7 @@ public class Fenetre extends JPanel {
 	
 	public Fenetre(String nom, int x, int y){
 	}
+	
 	public static void main(String args[]) {
 		DessinFigures dessin = new DessinFigures();
 		dessin.setPreferredSize(new Dimension(400,400));

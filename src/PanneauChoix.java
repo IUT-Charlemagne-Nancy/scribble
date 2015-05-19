@@ -1,12 +1,18 @@
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javafx.scene.control.Tab;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
@@ -17,7 +23,6 @@ public class PanneauChoix extends JPanel {
 	private DessinFigures dessin;
 	
 	public PanneauChoix(DessinFigures a){
-		this.dessin = a;
 	
 		final JComboBox c = new JComboBox(new String [] {"noir","vert","bleu","jaune","gris","violet","rose","rouge"});
 		c.addActionListener(new ActionListener() {
@@ -48,7 +53,7 @@ public class PanneauChoix extends JPanel {
 					a.setCouleur(Color.RED);
 				break;
 				}
-				dessin.setCouleur(a.getCouleur());
+					a.setCouleur(a.getCouleur());
 			}
 		});
 		
@@ -76,7 +81,7 @@ public class PanneauChoix extends JPanel {
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				d.setEnabled(true);
-				a.repaint();
+				a.valide = false;
 			}
 		});
 		
@@ -84,7 +89,9 @@ public class PanneauChoix extends JPanel {
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				d.setEnabled(false); 
-				a.repaint();
+				a.Trace();
+				a.setVisible(true);
+				a.valide = false;
 			}
 		});
 		
@@ -92,7 +99,7 @@ public class PanneauChoix extends JPanel {
 		b3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				d.setEnabled(false);
-				a.repaint();
+				a.activeManipulationsSouris();
 			}
 		});
 		
@@ -110,4 +117,5 @@ public class PanneauChoix extends JPanel {
 	public void determineCouleur(int n) {
 		
 	}
+	
 }
