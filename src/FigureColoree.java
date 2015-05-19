@@ -6,7 +6,7 @@ import java.awt.Graphics;
  * @author Benjamin
  *
  */
-public abstract class FigureColoree {
+public abstract class FigureColoree extends java.lang.Object {
 	private static final int TAILLE_CARRE_SELECTION = 50;
 	private static final int PERIPHERIE_CARRE_SELECTION = 60;
 	private boolean selected;
@@ -18,7 +18,7 @@ public abstract class FigureColoree {
 	public abstract int nbPoint();
 	public abstract int nbClics();
 	public abstract boolean estDedans(int x, int y);
-	public abstract void modifierPoints(Point p);
+	public abstract void modifierPoints(Point[] tab_saisie);
 	public void affiche(Graphics g){
 		if( this.selected == true){
 			for (int i = 0; i<tab_mem.length;i++){
