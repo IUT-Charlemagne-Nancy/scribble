@@ -13,6 +13,11 @@ public abstract class FigureColoree extends java.lang.Object {
 	protected Color couleur;
 	protected Point[] tab_mem;
 	
+	public FigureColoree(){
+		this.couleur= Color.black;
+		this.tab_mem = new Point[0];
+	}
+	
 
 	
 	public abstract int nbPoint();
