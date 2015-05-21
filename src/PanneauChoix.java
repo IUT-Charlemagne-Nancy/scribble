@@ -60,19 +60,25 @@ public class PanneauChoix extends JPanel {
 		final JComboBox d = new JComboBox(new String [] {"triangle","Quadrilatere","Rectangle"});
 		d.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				FigureColoree figure;
 				switch (d.getSelectedIndex()) {
 				case 0 :	
 	
 				break;
-				case 1 :	
+				case 1 :
+					FigureColoree figureA = new Quadrilatere();
+					figure = figureA;
+					a.construit(figure);
 					
 				break;
 				case 2 :	
-				
+					FigureColoree figureB = new Rectangle();
+					figure = figureB;
+					a.construit(figure);
+					
 				break;
 		
 				}
-
 			}
 		});
 		d.setEnabled(false);
@@ -81,7 +87,6 @@ public class PanneauChoix extends JPanel {
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				d.setEnabled(true);
-				a.valide = false;
 			}
 		});
 		

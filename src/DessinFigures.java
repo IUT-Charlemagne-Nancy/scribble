@@ -77,7 +77,7 @@ public void ajoute(FigureColoree fc) {
  * @param fc -forme à construire point par point à la souris
  */
 public void construit(FigureColoree fc){
-	this.figures[nbf - 1].affiche(getGraphics());
+	FabricantFigures fabricant = new FabricantFigures(fc);
 }
 
 /**
