@@ -11,7 +11,6 @@ public abstract class Polygone extends FigureColoree{
 	private java.awt.Polygon p ;
 	
 	public Polygone() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void affiche(java.awt.Graphics g){
