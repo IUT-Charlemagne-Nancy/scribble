@@ -15,7 +15,8 @@ public abstract class FigureColoree extends java.lang.Object {
 	
 	public FigureColoree(){
 		this.couleur= Color.black;
-		this.tab_mem = new Point[0];
+		this.tab_mem = new Point[this.nbPoint()];
+		this.selected = false;
 	}
 	
 

@@ -12,7 +12,6 @@ public class ManipulateurFormes extends java.lang.Object implements java.awt.eve
 	private boolean trans;
 	
 	private DessinFigures a;
-	
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
