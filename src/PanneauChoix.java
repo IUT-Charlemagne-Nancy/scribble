@@ -95,7 +95,6 @@ public class PanneauChoix extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				d.setEnabled(false); 
 				a.Trace();
-				a.setVisible(true);
 				a.valide = false;
 			}
 		});
