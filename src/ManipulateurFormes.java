@@ -30,7 +30,7 @@ public class ManipulateurFormes extends java.lang.Object implements java.awt.eve
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
