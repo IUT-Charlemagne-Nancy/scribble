@@ -27,6 +27,7 @@ public abstract class FigureColoree extends java.lang.Object {
 	public abstract void modifierPoints(Point[] tab_saisie);
 	public void affiche(Graphics g){
 		if( this.selected == true){
+			g.setColor(Color.gray);
 			for (int i = 0; i<tab_mem.length;i++){
 				g.fillRect(tab_mem[i].rendreX(), tab_mem[i].rendreY(), 10, 10);
 			}
