@@ -15,8 +15,11 @@ public class Fenetre extends JPanel {
 	public static void main(String args[]) {
 		DessinFigures dessin = new DessinFigures();
 		dessin.setPreferredSize(new Dimension(400,400));
+		
 		PanneauChoix panneau = new PanneauChoix(dessin);
 		panneau.setPreferredSize(new Dimension(75,75));
+		
+		
 		Fenetre fenetre = new Fenetre("Affiche",400,400);
 		fenetre.setLayout(new BorderLayout());
 		fenetre.add(panneau, BorderLayout.NORTH);

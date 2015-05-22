@@ -45,6 +45,7 @@ public class DessinFigures extends JPanel  {
  * Constructeur vide : dessin ne contenant aucune figure
  */
 public DessinFigures() {
+	super();
 	this.figures = new FigureColoree[100];
 	this.nbf = 0;
 	this.sel = -1;
@@ -78,6 +79,8 @@ public void ajoute(FigureColoree fc) {
  */
 public void construit(FigureColoree fc){
 	FabricantFigures fabricant = new FabricantFigures(fc);
+	this.addMouseListener(fabricant);
+	
 }
 
 /**

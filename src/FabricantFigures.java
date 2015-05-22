@@ -1,5 +1,8 @@
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.SwingUtilities;
 
 
 public class FabricantFigures extends java.lang.Object implements java.awt.event.MouseListener {
@@ -26,39 +29,72 @@ public class FabricantFigures extends java.lang.Object implements java.awt.event
 		this.points_cliques = fc.tab_mem;
 	}
 	
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		Point p = new Point(e.getX(),e.getY());
-		this.points_cliques[this.nb_points_cliques] = p;
-		;
-		this.nb_points_cliques = this.nb_points_cliques + 1;
-		Graphics g = null;
-		this.figure_en_cours_de_fabrication.affiche(g);
-	}
-	
+		public void mouseClicked(MouseEvent e) {
+		}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+		public void mouseEntered(MouseEvent e) {
+		}
 
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+		public void mouseExited(MouseEvent e) {
+		}
 
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+		public void mousePressed(MouseEvent e) {
+			Point p = new Point(e.getX(),e.getY());
+			points_cliques[nb_points_cliques] = p;
+			;
+			nb_points_cliques = nb_points_cliques + 1;
+			System.out.println(nb_points_cliques);
+		}
 
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
+		public void mouseReleased(MouseEvent e) {
+		}
 		
-	}
-	
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
