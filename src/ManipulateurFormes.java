@@ -15,13 +15,12 @@ public class ManipulateurFormes extends java.lang.Object implements java.awt.eve
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		if (a.valide) {
+	
 		setLastX(e.getX());
 		setLastY(e.getY());
 		this.trans = true;
 		a.figures[0].translation(e.getX(),e.getY());
 		}
-	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
@@ -36,9 +35,9 @@ public class ManipulateurFormes extends java.lang.Object implements java.awt.eve
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		if (a.valide) {
+	
 		a.figures[0].selectionne();
-		}
+	
 	}
 
 	@Override

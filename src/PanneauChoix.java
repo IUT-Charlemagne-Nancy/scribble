@@ -24,6 +24,7 @@ public class PanneauChoix extends JPanel {
 	
 	public PanneauChoix(DessinFigures a){
 	
+		/**
 		final JComboBox c = new JComboBox(new String [] {"noir","vert","bleu","jaune","gris","violet","rose","rouge"});
 		c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -56,6 +57,7 @@ public class PanneauChoix extends JPanel {
 					a.setCouleur(a.getCouleur());
 			}
 		});
+		*/
 		
 		final JComboBox d = new JComboBox(new String [] {"Quadrilatere","Rectangle"});
 		d.addActionListener(new ActionListener() {
@@ -113,7 +115,7 @@ public class PanneauChoix extends JPanel {
 		this.add(b1);
 		this.add(b2);
 		this.add(b3);
-		this.add(c);
+		//this.add(c);
 		this.add(d);
 		}
 	

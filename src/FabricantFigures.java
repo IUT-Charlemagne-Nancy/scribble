@@ -6,7 +6,12 @@ import javax.swing.SwingUtilities;
 
 
 public class FabricantFigures extends java.lang.Object implements java.awt.event.MouseListener {
-
+	
+	public int x;
+	
+	public int y;
+	
+	
 	/**
 	 * Figure en cours de fabrication
 	 */
@@ -39,11 +44,23 @@ public class FabricantFigures extends java.lang.Object implements java.awt.event
 		}
 
 		public void mousePressed(MouseEvent e) {
-			Point p = new Point(e.getX(),e.getY());
+			if(nb_points_cliques < 4){
+			x = e.getX();
+			y = e.getY();
+			Point p = new Point(x,y);
 			points_cliques[nb_points_cliques] = p;
-			;
 			nb_points_cliques = nb_points_cliques + 1;
 			System.out.println(nb_points_cliques);
+			System.out.println("Position x : " + x + " Position y : " + y);
+			if (nb_points_cliques == 4) {
+				this.figure_en_cours_de_fabrication.modifierPoints(points_cliques);
+                ((DessinFigures)e.getSource()).ajoute(figure_en_cours_de_fabrication);
+                ((DessinFigures)e.getSource()).selectionProchaineFigure();
+                ((DessinFigures)e.getSource()).repaint();
+                ((DessinFigures)e.getSource()).removeMouseListener(this);
+			}
+    
+        }
 		}
 
 		public void mouseReleased(MouseEvent e) {

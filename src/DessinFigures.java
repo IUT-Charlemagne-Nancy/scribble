@@ -36,10 +36,6 @@ public class DessinFigures extends JPanel  {
  */
 	private int sel;
 	
-	private Color couleur;
-	private int lastX;
-	private int lastY;
-	public boolean valide;
 	
 /**
  * Constructeur vide : dessin ne contenant aucune figure
@@ -55,7 +51,7 @@ public DessinFigures() {
  * Methode activant les manipulations des formes geometriques à la souris
  */
 public void activeManipulationsSouris(){
-	valide = true;
+	
 }
 
 
@@ -80,7 +76,6 @@ public void ajoute(FigureColoree fc) {
 public void construit(FigureColoree fc){
 	FabricantFigures fabricant = new FabricantFigures(fc);
 	this.addMouseListener(fabricant);
-	
 }
 
 /**
@@ -95,7 +90,10 @@ public void desactiveManipulationsSouris(){
  * @param figure selectionne (ou null si aucune figure n'est pas selectionne)
  */
 public FigureColoree figureSelection(){
-	return null;
+	if (sel ==-1) {
+		return null;
+	}
+	return this.figures[sel];
 }
 
 /**
@@ -103,13 +101,14 @@ public FigureColoree figureSelection(){
  * @return nombre de figures sur le dessin
  */
 public int nbFigures(){
-	return 0;
+	return nbf;
 }
 
 /**
  * Cette methode selectionne la prochaine figure dans le tableau des figures.
  */
 public void selectionProchaineFigure(){
+	this.sel = this.sel + 1;
 	
 }
 
@@ -122,90 +121,15 @@ public void supprimeAuditeurs(){
  * @param c - couleur du trait
  */
 public void Trace() {
-		final MouseMotionListener mml=new MouseMotionListener(){
-			
-			public void mouseMoved(MouseEvent e) {
-				setLastX(e.getX());
-				setLastY(e.getY());
-			}
-
-			public void mouseDragged(MouseEvent e) {
-				Graphics g=getGraphics();
-				dessiner(g,e);
-				setLastX(e.getX());
-				setLastY(e.getY());
-			}
-			
-		};
-		this.addMouseMotionListener(mml);
-		MouseListener ml=new MouseListener(){
-
-			public void mouseClicked(MouseEvent e) {
-				if (SwingUtilities.isRightMouseButton(e)){
-					removeMouseMotionListener(mml);
-					repaint();
-				}
-				if (SwingUtilities.isMiddleMouseButton(e)){
-					repaint();
-				}
-			}
-
-			public void mouseEntered(MouseEvent e) {
-			}
-
-			public void mouseExited(MouseEvent e) {
-			}
-
-			public void mousePressed(MouseEvent e) {
-			}
-
-			public void mouseReleased(MouseEvent e) {
-			}
-			
-		};
-		this.addMouseListener(ml);
-		repaint();
-	}
-
-
-
-	public void paintComponent(Graphics g){
-		super.paintComponent(g);
-	}
-
-	public void dessiner(Graphics g,MouseEvent e){
-		g.setColor(getCouleur());
-		g.drawLine(getLastX(), getLastY(), e.getX(), e.getY());
-		
-	}
 	
 	
-	public void setCouleur(Color couleur) {
-		this.couleur = couleur;
-		
-	}
+}
 
-	public Color getCouleur() {
-		return couleur;
-	}
+public void paintComponent(Graphics g){
+	super.paintComponent(g);
+	for(int i = 0;i<3;i++){
+		figures[i].affiche(g);
+	} 
+}
 
-	public int getLastX() {
-		return lastX;
-	}
-
-	public void setLastX(int lastX) {
-		this.lastX = lastX;
-	}
-
-	public int getLastY() {
-		return lastY;
-	}
-
-	public void setLastY(int lastY) {
-		this.lastY = lastY;
-	}
-	
-	public void setValide(boolean a){
-		valide = a;
-	}
 }
