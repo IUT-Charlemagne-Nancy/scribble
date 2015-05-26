@@ -29,7 +29,7 @@ public abstract class Polygone extends FigureColoree{
 	}
 	
 	public int nbClics(){
-		return p.npoints;
+		return 4;
 	}
 	
 	public void modifierPoints(Point[] tab_saisie){

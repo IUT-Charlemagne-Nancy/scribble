@@ -127,7 +127,7 @@ public void Trace() {
 
 public void paintComponent(Graphics g){
 	super.paintComponent(g);
-	for(int i = 0;i<3;i++){
+	for(int i = 0;i<nbf;i++){
 		figures[i].affiche(g);
 	} 
 }

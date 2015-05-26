@@ -25,6 +25,7 @@ public abstract class FigureColoree extends java.lang.Object {
 	public abstract int nbClics();
 	public abstract boolean estDedans(int x, int y);
 	public abstract void modifierPoints(Point[] tab_saisie);
+	
 	public void affiche(Graphics g){
 		if( this.selected == true){
 			g.setColor(Color.gray);
