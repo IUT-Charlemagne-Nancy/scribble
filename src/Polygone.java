@@ -4,6 +4,7 @@
  *
  */
 import java.awt.*;
+
 import javax.swing.*;
 
 public abstract class Polygone extends FigureColoree{
@@ -33,11 +34,11 @@ public abstract class Polygone extends FigureColoree{
 	}
 	
 	public boolean estDedans(int x, int y){
-		return false;
+		return p.contains(x,y);
 	}
 	
 	public int nbClics(){
-		return 4;
+		return this.nbPoint();
 	}
 	
 	public void modifierPoints(Point[] tab_saisie){
