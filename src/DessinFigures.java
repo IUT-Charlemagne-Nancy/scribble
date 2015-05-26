@@ -14,6 +14,9 @@ import javax.swing.SwingUtilities;
 
 
 public class DessinFigures extends JPanel  {
+	
+	private int lastX;
+	private int lastY;
 
 	protected Color couleur;
 	
@@ -122,9 +125,50 @@ public void supprimeAuditeurs(){
  * Cette methode permet d'initier le mecanisme evenementiel de trace quelconque a la souris (definition de la couleur du trace et ajout des listeners)
  * @param c - couleur du trait
  */
-public void Trace() {
-	
-	
+public void Trace(Color couleur) {
+	this.couleur = couleur;
+	final MouseMotionListener mml=new MouseMotionListener(){
+		
+		public void mouseMoved(MouseEvent e) {
+			lastX=e.getX();
+			lastY=e.getY();
+		}
+
+		public void mouseDragged(MouseEvent e) {
+			Graphics g=getGraphics();
+			dessiner(g,e);
+			lastX=e.getX();
+			lastY=e.getY();
+		}
+		
+	};
+	this.addMouseMotionListener(mml);
+	MouseListener ml=new MouseListener(){
+
+		public void mouseClicked(MouseEvent e) {
+			if (SwingUtilities.isRightMouseButton(e)){
+				removeMouseMotionListener(mml);
+				repaint();
+			}
+			if (SwingUtilities.isMiddleMouseButton(e)){
+				repaint();
+			}
+		}
+
+		public void mouseEntered(MouseEvent e) {
+		}
+
+		public void mouseExited(MouseEvent e) {
+		}
+
+		public void mousePressed(MouseEvent e) {
+		}
+
+		public void mouseReleased(MouseEvent e) {
+		}
+		
+	};
+	this.addMouseListener(ml);
 }
 
 public void paintComponent(Graphics g){
@@ -132,6 +176,11 @@ public void paintComponent(Graphics g){
 	for(int i = 0;i<nbf;i++){
 		figures[i].affiche(g);
 	} 
+}
+
+public void dessiner(Graphics g,MouseEvent e){
+	g.setColor(getCouleur());
+	g.drawLine(lastX, lastY, e.getX(), e.getY());
 }
 
 public void setCouleur(Color a) {
