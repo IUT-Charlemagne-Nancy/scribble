@@ -54,6 +54,7 @@ public class FabricantFigures extends java.lang.Object implements java.awt.event
 			System.out.println("Position x : " + x + " Position y : " + y);
 			
 			if (nb_points_cliques == this.figure_en_cours_de_fabrication.nbClics()) {
+				this.figure_en_cours_de_fabrication.changerCouleur(((DessinFigures)e.getSource()).couleur);
 				this.figure_en_cours_de_fabrication.modifierPoints(points_cliques);
                 ((DessinFigures)e.getSource()).ajoute(figure_en_cours_de_fabrication);
                 ((DessinFigures)e.getSource()).selectionProchaineFigure();

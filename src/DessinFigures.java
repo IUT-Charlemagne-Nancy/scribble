@@ -14,6 +14,8 @@ import javax.swing.SwingUtilities;
 
 
 public class DessinFigures extends JPanel  {
+
+	protected Color couleur;
 	
 /**
  * Tableau pouvant contenir jusqu'à 100 figures à visualiser et manipuler	
@@ -131,5 +133,15 @@ public void paintComponent(Graphics g){
 		figures[i].affiche(g);
 	} 
 }
+
+public void setCouleur(Color a) {
+	this.couleur = a;
+	
+}
+
+public Color getCouleur() {
+	return this.couleur;
+}
+
 
 }

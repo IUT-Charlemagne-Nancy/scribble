@@ -23,7 +23,7 @@ public abstract class Polygone extends FigureColoree{
 	public void affiche(java.awt.Graphics g){
 		int[] x = new int[10];
 		int[] y = new int[10];
-		
+		g.setColor(couleur);
 		for (int i = 0 ; i<tab_mem.length ; i++){
 			x[i] = tab_mem[i].rendreX();
 			y[i] = tab_mem[i].rendreY();

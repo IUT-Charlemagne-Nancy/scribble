@@ -67,7 +67,9 @@ public abstract class FigureColoree extends java.lang.Object {
 		this.couleur = c;
 	}
 	
-	
+	public Color retournerCouleur(){
+		return this.couleur;
+	}
 	
 	
 }
