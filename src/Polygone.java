@@ -21,7 +21,15 @@ public abstract class Polygone extends FigureColoree{
 	}
 	
 	public void affiche(java.awt.Graphics g){
-		g.drawPolygon(p);
+		int[] x = new int[10];
+		int[] y = new int[10];
+		
+		for (int i = 0 ; i<tab_mem.length ; i++){
+			x[i] = tab_mem[i].rendreX();
+			y[i] = tab_mem[i].rendreY();
+			
+		}
+		g.fillPolygon(x,y,tab_mem.length);
 	}
 	
 	public boolean estDedans(int x, int y){

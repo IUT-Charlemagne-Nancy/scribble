@@ -21,9 +21,9 @@ public class Rectangle extends Quadrilatere {
 	public void modifierPoints(Point[] tab_saisie){
 		Point p1 = tab_saisie[0];
 		Point p2 = tab_saisie[1];
-		Point p3 = new Point(p1.rendreX(), p2.rendreY());
-		Point p4 = new Point(p2.rendreX(), p1.rendreY());
-		Point[] tab = {p1,p2,p3,p4};
+		Point p4 = new Point(p1.rendreX(), p2.rendreY());
+		Point p3 = new Point(p2.rendreX(), p1.rendreY());
+		Point[] tab = {p1,p3,p2,p4};
 		this.tab_mem = tab;
 	}
 }
