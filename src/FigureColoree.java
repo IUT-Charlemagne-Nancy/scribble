@@ -38,7 +38,7 @@ public abstract class FigureColoree extends java.lang.Object {
 	public int carreDeSelection(int x, int y){
 		int nb = -1;
 		for (int i = 0; i<this.tab_mem.length; i++){
-			if (this.tab_mem[i].rendreX()>=x-10 || this.tab_mem[i].rendreX()<=x+10 || this.tab_mem[i].rendreY()>=y-10 || this.tab_mem[i].rendreY()<=y+10 ){
+			if (this.tab_mem[i].rendreX()>=x-10 || this.tab_mem[i].rendreX()<=x+10 && this.tab_mem[i].rendreY()>=y-10 || this.tab_mem[i].rendreY()<=y+10 ){
 				nb = i;
 			}
 		}
