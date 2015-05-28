@@ -40,7 +40,7 @@ public abstract class FigureColoree extends java.lang.Object {
 		if( this.selected == true){
 			g.setColor(Color.gray);
 			for (int i = 0; i<tab_mem.length;i++){
-				g.fillRect(tab_mem[i].rendreX(), tab_mem[i].rendreY(), 10, 10);
+				g.fillRect(tab_mem[i].rendreX()-5, tab_mem[i].rendreY()-5, 10, 10);
 			}
 		}
 	}

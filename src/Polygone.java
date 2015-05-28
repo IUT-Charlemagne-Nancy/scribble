@@ -22,19 +22,6 @@ public abstract class Polygone extends FigureColoree{
 		this.modifierPoints(tab_saisie);
 	}
 	
-	/**
-	 * public void affiche(java.awt.Graphics g){
-	 
-		int[] x = new int[10];
-		int[] y = new int[10];
-		g.setColor(couleur);
-		for (int i = 0 ; i<tab_mem.length ; i++){
-			x[i] = tab_mem[i].rendreX();
-			y[i] = tab_mem[i].rendreY();
-			
-		}
-		g.fillPolygon(x,y,tab_mem.length);
-	}*/
 	
 	public boolean estDedans(int x, int y){
 		int[] PosX = new int[10];
