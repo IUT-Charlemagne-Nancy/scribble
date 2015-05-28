@@ -38,7 +38,7 @@ public abstract class FigureColoree extends java.lang.Object {
 		g.fillPolygon(x,y,tab_mem.length);
 		System.out.println(this.selected);
 		if( this.selected == true){
-			g.setColor(Color.gray);
+			g.setColor(Color.red);
 			for (int i = 0; i<tab_mem.length;i++){
 				g.fillRect(tab_mem[i].rendreX()-5, tab_mem[i].rendreY()-5, 10, 10);
 			}
