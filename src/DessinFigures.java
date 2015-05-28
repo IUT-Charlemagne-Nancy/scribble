@@ -55,7 +55,11 @@ public DessinFigures() {
  * Methode activant les manipulations des formes geometriques à la souris
  */
 public void activeManipulationsSouris(){
-	
+	ManipulateurFormes manipul = new ManipulateurFormes();
+	this.addMouseListener(manipul);
+    this.addMouseMotionListener(manipul);
+    repaint();
+
 }
 
 
@@ -205,10 +209,6 @@ public class ManipulateurFormes extends java.lang.Object implements java.awt.eve
 	@Override
 	public void mouseDragged(MouseEvent e) {
 	
-		setLastX(e.getX());
-		setLastY(e.getY());
-		this.trans = true;
-		figures[0].translation(e.getX(),e.getY());
 		}
 
 	@Override
@@ -219,13 +219,22 @@ public class ManipulateurFormes extends java.lang.Object implements java.awt.eve
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		
-		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-	
-		figures[0].selectionne();
+		if(SwingUtilities.isLeftMouseButton(e)){
+			int x = e.getX();
+			int y = e.getY();
+			for (int i = 0; i<nbf;i++){
+				if(figures[i].estDedans(x,y)){
+					sel = i;
+					Graphics g = getGraphics();
+					figures[sel].selectionne();
+					figures[sel].affiche(g);
+				}
+			}
+		}
 	
 	}
 

@@ -27,6 +27,16 @@ public abstract class FigureColoree extends java.lang.Object {
 	public abstract void modifierPoints(Point[] tab_saisie);
 	
 	public void affiche(Graphics g){
+		int[] x = new int[10];
+		int[] y = new int[10];
+		g.setColor(couleur);
+		for (int i = 0 ; i<tab_mem.length ; i++){
+			x[i] = tab_mem[i].rendreX();
+			y[i] = tab_mem[i].rendreY();
+			
+		}
+		g.fillPolygon(x,y,tab_mem.length);
+		System.out.println(this.selected);
 		if( this.selected == true){
 			g.setColor(Color.gray);
 			for (int i = 0; i<tab_mem.length;i++){
