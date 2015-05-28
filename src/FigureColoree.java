@@ -56,7 +56,7 @@ public abstract class FigureColoree extends java.lang.Object {
 	}
 	public void translation(int x, int y){
 		for (int i = 0; i<this.tab_mem.length;i++){
-			this.tab_mem[i].translation(x, y);
+			this.tab_mem[i] = new Point(this.tab_mem[i].rendreX()+x,this.tab_mem[i].rendreY()+y);
 		}
 	}
 	
