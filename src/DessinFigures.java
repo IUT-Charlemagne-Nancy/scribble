@@ -208,7 +208,11 @@ public class ManipulateurFormes extends java.lang.Object implements java.awt.eve
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-	
+		if(sel != -1 && figures[sel].carreDeSelection(e.getX(), e.getY()) != -1){
+			int carre = figures[sel].carreDeSelection(e.getX(), e.getY());
+			figures[sel].translation(e.getX()-figures[sel].tab_mem[carre].rendreX(),e.getY()-figures[sel].tab_mem[carre].rendreY());
+		}
+		repaint();
 		}
 
 	@Override
@@ -228,12 +232,19 @@ public class ManipulateurFormes extends java.lang.Object implements java.awt.eve
 			int y = e.getY();
 			for (int i = 0; i<nbf;i++){
 				if(figures[i].estDedans(x,y)){
+					if(sel != -1){
+						figures[i].deSelectionner();
+					}
 					sel = i;
 					Graphics g = getGraphics();
 					figures[sel].selectionne();
 					figures[sel].affiche(g);
 				}
+				else{
+					figures[i].deSelectionner();
+				}
 			}
+			repaint();
 		}
 	
 	}
