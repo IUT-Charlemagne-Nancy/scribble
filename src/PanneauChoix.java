@@ -60,7 +60,7 @@ public class PanneauChoix extends JPanel {
 		});
 		
 		
-		final JComboBox d = new JComboBox(new String [] {"Aucune","Quadrilatere","Rectangle"});
+		final JComboBox d = new JComboBox(new String [] {"Aucune","Quadrilatere","Rectangle","Triangle"});
 		d.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FigureColoree figure;
@@ -78,6 +78,12 @@ public class PanneauChoix extends JPanel {
 				case 2 :	
 					FigureColoree figureB = new Rectangle();
 					figure = figureB;
+					a.construit(figure);
+					
+				break;
+				case 3 :	
+					FigureColoree figureC = new Triangle();
+					figure = figureC;
 					a.construit(figure);
 					
 				break;
