@@ -105,6 +105,7 @@ public class PanneauChoix extends JPanel {
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				d.setEnabled(false); 
+				a.desactiveManipulationsSouris();
 				a.Trace(a.couleur);
 			}
 		});
