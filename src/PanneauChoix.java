@@ -97,6 +97,7 @@ public class PanneauChoix extends JPanel {
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				d.setEnabled(true);
+				a.desactiveManipulationsSouris();
 				
 			}
 		});
@@ -104,8 +105,8 @@ public class PanneauChoix extends JPanel {
 		final JRadioButton b2 = new JRadioButton ( "Tracé à main levée" );
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				d.setEnabled(false); 
 				a.desactiveManipulationsSouris();
+				d.setEnabled(false); 
 				a.Trace(a.couleur);
 			}
 		});

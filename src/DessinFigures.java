@@ -17,6 +17,9 @@ public class DessinFigures extends JPanel  {
 	private int lastX;
 	private int lastY;
 
+	
+	
+	private ManipulateurFormes manipul;
 	protected Color couleur;
 	
 /**
@@ -55,7 +58,7 @@ public DessinFigures() {
  * Methode activant les manipulations des formes geometriques à la souris
  */
 public void activeManipulationsSouris(){
-	ManipulateurFormes manipul = new ManipulateurFormes();
+	manipul = new ManipulateurFormes();
 	this.addMouseListener(manipul);
     this.addMouseMotionListener(manipul);
     repaint();
@@ -90,7 +93,9 @@ public void construit(FigureColoree fc){
  * Methode desactivant les manipulations des formes geometriques a la souris
  */
 public void desactiveManipulationsSouris(){
-	
+	this.removeMouseListener(manipul);
+    this.removeMouseMotionListener(manipul);
+	repaint();
 }
 
 /**
