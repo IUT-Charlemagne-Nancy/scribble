@@ -16,110 +16,121 @@ import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-
-
+/**
+ * 
+ * @author Corentin
+ *
+ */
 public class PanneauChoix extends JPanel {
 	
+	/**
+	 * Construction du DessinFigures que l'on va utilise 
+	 */
+
 	private DessinFigures dessin;
-	
-	public PanneauChoix(DessinFigures a){
-	
-		
-		final JComboBox c = new JComboBox(new String [] {"noir","vert","bleu","jaune","gris","violet","rose","rouge"});
+
+	/**
+	 * Constructeur du PanneauChoix
+	 * @param a le DessinFigures
+	 */
+	public PanneauChoix(DessinFigures a) {
+
+		final JComboBox c = new JComboBox(new String[] { "noir", "vert",
+				"bleu", "jaune", "gris", "violet", "rose", "rouge" });
 		c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FigureColoree figure;
 				switch (c.getSelectedIndex()) {
-				case 0 :	
-					a.setCouleur(Color.BLACK) ;
-				break;
-				case 1 :	
-					a.setCouleur(Color.GREEN) ;
-				break;
-				case 2 :	
+				case 0:
+					a.setCouleur(Color.BLACK);
+					break;
+				case 1:
+					a.setCouleur(Color.GREEN);
+					break;
+				case 2:
 					a.setCouleur(Color.BLUE);
-				break;
-				case 3 :
-					a.setCouleur(Color.YELLOW) ;
-				break;
-				case 4 :
+					break;
+				case 3:
+					a.setCouleur(Color.YELLOW);
+					break;
+				case 4:
 					a.setCouleur(Color.GRAY);
-				break;
-				case 5 :	
+					break;
+				case 5:
 					a.setCouleur(Color.MAGENTA);
-				break;
-				case 6 :	
+					break;
+				case 6:
 					a.setCouleur(Color.PINK);
-				break;
-				case 7 :	
+					break;
+				case 7:
 					a.setCouleur(Color.RED);
-				break;
+					break;
 				}
-					a.setCouleur(a.getCouleur());
+				a.setCouleur(a.getCouleur());
 			}
 		});
-		
-		
-		final JComboBox d = new JComboBox(new String [] {"Aucune","Quadrilatere","Rectangle","Triangle"});
+
+		final JComboBox d = new JComboBox(new String[] { "Aucune",
+				"Quadrilatere", "Rectangle", "Triangle" });
 		d.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FigureColoree figure;
 				switch (d.getSelectedIndex()) {
-				case 0 :
-					
-				break;
-				
-				case 1 :
+				case 0:
+
+					break;
+
+				case 1:
 					FigureColoree figureA = new Quadrilatere();
 					figure = figureA;
 					a.construit(figure);
-					
-				break;
-				case 2 :	
+
+					break;
+				case 2:
 					FigureColoree figureB = new Rectangle();
 					figure = figureB;
 					a.construit(figure);
-					
-				break;
-				case 3 :	
+
+					break;
+				case 3:
 					FigureColoree figureC = new Triangle();
 					figure = figureC;
 					a.construit(figure);
-					
-				break;
-		
+
+					break;
+
 				}
 			}
 		});
 		d.setEnabled(false);
-		
-		final JRadioButton b1 = new JRadioButton ( "Nouvelle figure" );
+
+		final JRadioButton b1 = new JRadioButton("Nouvelle figure");
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				d.setEnabled(true);
 				a.desactiveManipulationsSouris();
-				
+
 			}
 		});
-		
-		final JRadioButton b2 = new JRadioButton ( "Tracé à main levée" );
+
+		final JRadioButton b2 = new JRadioButton("Tracé à main levée");
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				a.desactiveManipulationsSouris();
-				d.setEnabled(false); 
-				a.Trace(a.couleur);
+				d.setEnabled(false);
+				a.trace(a.couleur);
 			}
 		});
-		
-		final JRadioButton b3 = new JRadioButton ( "Manipulations" );
+
+		final JRadioButton b3 = new JRadioButton("Manipulations");
 		b3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				d.setEnabled(false);
 				a.activeManipulationsSouris();
 			}
 		});
-		
-		ButtonGroup bg = new ButtonGroup ();
+
+		ButtonGroup bg = new ButtonGroup();
 		bg.add(b1);
 		bg.add(b2);
 		bg.add(b3);
@@ -128,10 +139,6 @@ public class PanneauChoix extends JPanel {
 		this.add(b3);
 		this.add(c);
 		this.add(d);
-		}
-	
-	public void determineCouleur(int n) {
-		
 	}
-	
+
 }
